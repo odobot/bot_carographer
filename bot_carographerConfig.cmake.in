@@ -1,0 +1,14 @@
+# - Config file for the bot_carographer package
+# It defines the following variables
+#  bot_carographer_INCLUDE_DIRS - include directories for FooBar
+#  bot_carographer_LIBRARIES    - libraries to link against
+#  bot_carographer_EXECUTABLE   - the bar executable
+
+set(bot_carographer_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+include("${bot_carographer_DIR}/export_bot_carographer.cmake")
+
+# These are IMPORTED targets created by bot_carographerTargets.cmake
+
+
