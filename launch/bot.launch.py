@@ -14,11 +14,11 @@ def generate_launch_description():
             description='Path to robot URDF file'
         ),
         
-        # DeclareLaunchArgument(
-        #     'configuration_directory',
-        #     default_value='$(find bot_carographer)/urdf/bot.xacro.urdf',
-        #     description='Path to robot URDF file'
-        # ),
+        DeclareLaunchArgument(
+            'configuration_directory',
+            default_value='$(find bot_carographer)/configuration',
+            description='Path to configuration files directory'
+        ),
         
         # Load robot description and start state publisher
         Node(
@@ -49,7 +49,7 @@ def generate_launch_description():
             name='cartographer_node',
             output='screen',
             arguments=[
-                '-configuration_directory', '$(find bot_carographer)/configuration',
+                '-configuration_directory', LaunchConfiguration('configuration_directory'),
                 '-configuration_basename', 'bot_2d.lua'
             ]
         ),
